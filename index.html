@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intellibank - Tu Banco Digital Inteligente</title>
+
+  <style>
+     .logo{
+    width:40px;
+    height:40px;
+    max-width:40px;
+    max-height:40px;
+    object-fit:cover;
+    display:block;
+}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f7fc;
+      color:#222;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      background:#001d66;
+      padding:15px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    nav h2{
+      color:white;
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:17px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ffd45c;
+    }
+
+    /* HEADER */
+
+    header{
+      min-height:100vh;
+      background:linear-gradient(135deg,#003bb3,#c9a13b);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      color:white;
+    }
+
+    .hero{
+      max-width:900px;
+    }
+
+    .hero img{
+      width:240px;
+      background:white;
+      padding:10px;
+      border-radius:25px;
+      margin-bottom:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero h1{
+      font-size:75px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:23px;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .botones{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 35px;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn-principal{
+      background:white;
+      color:#003bb3;
+    }
+
+    .btn-principal:hover{
+      transform:scale(1.05);
+    }
+
+    .btn-secundario{
+      background:#001d66;
+      color:white;
+    }
+
+    .btn-secundario:hover{
+      background:#000d33;
+      transform:scale(1.05);
+    }
+
+    /* SECCIONES */
+
+    .contenedor{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:70px 0;
+    }
+
+    .titulo{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .titulo h2{
+      font-size:45px;
+      color:#003bb3;
+      margin-bottom:15px;
+    }
+
+    .titulo p{
+      font-size:20px;
+      color:#555;
+    }
+
+    /* TARJETAS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+      text-align:center;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      color:#c9a13b;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+
+    .card p{
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    /* IA SECTION */
+
+    .ia{
+      background:#001d66;
+      color:white;
+      border-radius:25px;
+      padding:60px 40px;
+      text-align:center;
+      margin-top:50px;
+    }
+
+    .ia h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .ia p{
+      font-size:20px;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    /* ESTADÍSTICAS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat{
+      background:white;
+      padding:30px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .stat h2{
+      color:#003bb3;
+      font-size:45px;
+      margin-bottom:10px;
+    }
+
+    .stat p{
+      font-size:18px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:35px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:10px 0;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:800px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .hero img{
+        width:180px;
+      }
+
+      .titulo h2{
+        font-size:35px;
+      }
+
+      .ia h2{
+        font-size:35px;
+      }
+
+    }
+/* BOTON FLOTANTE */
+
+.boton-equipo{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:linear-gradient(135deg,#003bb3,#c9a13b);
+    color:white;
+    text-decoration:none;
+    padding:18px 22px;
+    border-radius:18px;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    z-index:9999;
+    transition:0.3s;
+}
+
+.boton-equipo:hover{
+    transform:scale(1.08);
+}
+  </style>
+</head>
+<!-- BOTON EQUIPO -->
+
+<a href="reconocimiento.html" class="boton-equipo">
+
+    👥 Equipo
+
+</a>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <a href="index.html" class="logo-link">
+    <img src="logo.jpeg" class="logo">
+    <h2>IntelliBank</h2>
+</a>
+
+    <ul>
+      <li><a href="Index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="infoia.html">AI</a></li>
+      <li><a href="prestamos.html">Préstamos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="cuenta.html">Perfil</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <header>
+
+    <div class="hero">
+
+      <img src="logo.jpeg" alt="Logo Intellibank">
+
+      <h1>INTELLIBANK</h1>
+
+      <p>
+        El neobanco digital impulsado por Inteligencia Artificial.
+        Maneja tu dinero, solicita préstamos y recibe ayuda financiera
+        totalmente online y desde cualquier lugar.
+      </p>
+
+      <div class="botones">
+
+        <a href="ia.html" class="btn btn-principal">
+          Hablar con la AI
+        </a>
+
+        <a href="crearcuenta.html" class="btn btn-secundario">
+          Crear Cuenta
+        </a>
+        
+        <a href="login.html" class="btn btn-secundario">
+         Iniciar Sesión
+</a>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- SERVICIOS -->
+
+  <section class="contenedor">
+
+    <div class="titulo">
+      <h2>Servicios Digitales</h2>
+      <p>Todo el banco funciona 100% online</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Crear Cuenta</h3>
+
+        <p>
+          Abre tu cuenta bancaria digital en minutos sin visitar oficinas.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Préstamos</h3>
+
+        <p>
+          Solicita préstamos rápidos con aprobación digital automática.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Transferencias</h3>
+
+        <p>
+          Envía dinero de forma rápida, segura y desde cualquier lugar.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Pagos Online</h3>
+
+        <p>
+          Paga servicios, facturas y compras directamente desde la app.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Seguridad</h3>
+
+        <p>
+          Protección avanzada y monitoreo inteligente con IA.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Atención 24/7</h3>
+
+        <p>
+          Recibe ayuda automática mediante inteligencia artificial.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- IA -->
+
+    <div class="ia">
+
+      <h2>Inteligencia Artificial Financiera</h2>
+
+      <p>
+        Nuestra IA puede ayudarte a mejorar tus finanzas,
+        darte recomendaciones inteligentes, explicar trámites,
+        ayudarte a ahorrar dinero y responder dudas bancarias
+        las 24 horas del día.
+      </p>
+
+      <a href="ia.html" target="_blank" class="btn btn-principal">
+        Probar AI
+      </a>
+
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+
+    <div class="stats">
+
+      <div class="stat">
+        <h2>24/7</h2>
+        <p>Soporte Inteligente</p>
+      </div>
+
+      <div class="stat">
+        <h2>100%</h2>
+        <p>Digital</p>
+      </div>
+
+      <div class="stat">
+        <h2>+50K</h2>
+        <p>Usuarios</p>
+      </div>
+
+      <div class="stat">
+        <h2>0</h2>
+        <p>Sucursales Físicas</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2026 Intellibank - Tu Banco Digital Inteligente
+
+    </p>
+
+    <p>
+      Banco digital moderno impulsado por Inteligencia Artificial.
+    </p>
+
+  </footer>
+
+</body>
+</html>

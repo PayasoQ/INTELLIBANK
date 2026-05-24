@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntelliBank AI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#f5f5f5,#e8e8e8);
+    min-height:100vh;
+}.contenedor,
+.chat-container{
+    margin:40px auto;
+}
+/* NAVBAR */
+
+nav{
+    width:100%;
+    background:#001d66;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav h2{
+    color:white;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd45c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+.chat-container{
+    width:90%;
+    max-width:900px;
+    height:90vh;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+    display:flex;
+    flex-direction:column;
+}
+
+.topo{
+    background:#001d66;
+    color:white;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.topo img{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    background:white;
+    padding:5px;
+}
+
+.topo h2{
+    font-size:28px;
+}
+
+.chat{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+    background:#f4f7fc;
+}
+
+.mensaje{
+    max-width:75%;
+    padding:15px;
+    margin:10px 0;
+    border-radius:18px;
+    font-size:17px;
+    line-height:1.5;
+}
+
+.bot{
+    background:#e3ebff;
+    color:#111;
+}
+
+.usuario{
+    background:#001d66;
+    color:white;
+    margin-left:auto;
+}
+
+.input-area{
+    display:flex;
+    padding:20px;
+    background:white;
+    border-top:1px solid #ddd;
+}
+
+.input-area input{
+    flex:1;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+.input-area button{
+    margin-left:10px;
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(to right,#003bb3,#c9a13b);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.input-area button:hover{
+    opacity:0.9;
+}
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="Index.html" class="logo-link">
+    <img src="logo.jpeg" class="logo">
+    <h2>IntelliBank</h2>
+</a>
+
+    <ul>
+        <li><a href="Index.html">Inicio</a></li>
+
+        <li><a href="servicios.html">Servicios</a></li>
+
+        <li><a href="infoia.html">AI</a></li>
+
+        <li><a href="prestamos.html">Préstamos</a></li>
+
+        <li><a href="contacto.html">Contacto</a></li>
+
+        <li><a href="cuenta.html">Perfil</a></li>
+    </ul>
+
+</nav>
+<div class="chat-container">
+
+    <div class="topo">
+        <img src="logo.jpeg">
+        <h2>IntelliBank AI</h2>
+    </div>
+
+    <div class="chat" id="chat">
+
+        <div class="mensaje bot">
+            Hola 👋 Soy IntelliBank AI.<br>
+            Pregúntame sobre bancos, dinero, internet o cualquier tema.
+        </div>
+
+    </div>
+
+    <div class="input-area">
+
+        <input type="text" id="pregunta" placeholder="Escribe tu pregunta...">
+
+        <button onclick="responder()">
+            Enviar
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function responder(){
+
+    let input = document.getElementById("pregunta");
+    let chat = document.getElementById("chat");
+
+    let texto = input.value;
+
+    if(texto == ""){
+        return;
+    }
+
+    // MENSAJE DEL USUARIO
+
+    let userMsg = document.createElement("div");
+
+    userMsg.className = "mensaje usuario";
+
+    userMsg.innerText = texto;
+
+    chat.appendChild(userMsg);
+
+    // RESPUESTAS FALSAS TIPO IA
+let respuesta = "";
+
+ if(texto.toLowerCase().includes("¿cuál es el horario de servicio de intellibank?")){
+
+    respuesta =
+    "¡Bienvenido a IntelliBank! Nuestro servicio digital está disponible las 24 horas del día, los 7 días de la semana. " +
+    "Las sucursales físicas operan de lunes a viernes de 8:00 a.m. a 5:00 p.m.";
+
+}
+
+else if(texto.toLowerCase().includes("¿qué tipos de cuentas ofrecen?")){
+
+    respuesta =
+    "En IntelliBank ofrecemos: Cuenta de ahorro, Cuenta corriente, Cuenta juvenil, Cuenta empresarial y Cuenta digital sin tarjeta física. " +
+    "Cada una incluye acceso a banca en línea y transferencias digitales.";
+
+}
+
+else if(texto.toLowerCase().includes("¿cómo puedo comunicarme con servicio al cliente?")){
+
+    respuesta =
+    "Puedes contactarnos mediante: Chat inteligente 24/7, Línea telefónica, Correo electrónico y Redes sociales oficiales. " +
+    "Nuestro tiempo promedio de respuesta es menor a 5 minutos.";
+
+}
+
+else if(texto.toLowerCase().includes("¿qué diferencia tiene intellibank de otros bancos?")){
+
+    respuesta =
+    "IntelliBank combina inteligencia artificial con atención personalizada para ofrecer: Respuestas rápidas, Atención 24/7, " +
+    "Procesos digitales simples y Mayor seguridad tecnológica.";
+
+}
+
+else if(texto.toLowerCase().includes("¿puedo retirar dinero sin tarjeta?")){
+
+    respuesta =
+    "Sí. Puedes generar un código de retiro desde la app y utilizarlo en cajeros IntelliBank autorizados.";
+
+}
+
+else if(texto.toLowerCase().includes("¿los menores pueden tener cuentas?")){
+
+    respuesta =
+    "Sí. Las cuentas juveniles pueden abrirse desde los 12 años con autorización de los padres o tutores.";
+
+}
+
+else if(texto.toLowerCase().includes("hola")){
+
+    respuesta =
+    "Hola 👋 Bienvenido a IntelliBank AI. " +
+    "Soy el asistente inteligente de IntelliBank y puedo ayudarte " +
+    "con información bancaria, finanzas, tecnología, internet y mucho más.";
+
+}
+
+else if(texto.toLowerCase().includes("mmg")){
+
+    respuesta =
+    "Que tu dice singatumadre a puesto a que fue yeiromi o stailin yo sabia que los dos eran uno pajaro";
+
+}
+    // MENSAJE IA
+
+    setTimeout(()=>{
+
+        let botMsg = document.createElement("div");
+
+        botMsg.className = "mensaje bot";
+
+        botMsg.innerText = respuesta;
+
+        chat.appendChild(botMsg);
+
+        chat.scrollTop = chat.scrollHeight;
+
+    },700);
+
+    input.value = "";
+
+}
+
+</script>
+
+</body>
+</html>

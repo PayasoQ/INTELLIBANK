@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios - IntelliBank</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    color:#222;
+}
+/* NAVBAR */
+
+nav{
+    width:100%;
+    background:#001d66;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav h2{
+    color:white;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd45c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+header{
+    background:linear-gradient(135deg,#003bb3,#c9a13b);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header img{
+    width:180px;
+    background:white;
+    padding:10px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+header h1{
+    font-size:55px;
+}
+
+header p{
+    margin-top:15px;
+    font-size:22px;
+}
+
+.contenedor{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:60px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.icono{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:#003bb3;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+.extra{
+    background:white;
+    margin-top:50px;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.extra h2{
+    color:#003bb3;
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.extra p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 30px;
+    background:linear-gradient(to right,#003bb3,#c9a13b);
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:18px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+}
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="Index.html" class="logo-link">
+    <img src="logo.jpeg" class="logo">
+    <h2>IntelliBank</h2>
+</a>
+
+    <ul>
+        <li><a href="Index.html">Inicio</a></li>
+
+        <li><a href="servicios.html">Servicios</a></li>
+
+        <li><a href="infoia.html">AI</a></li>
+
+        <li><a href="prestamos.html">Préstamos</a></li>
+
+        <li><a href="contacto.html">Contacto</a></li>
+
+        <li><a href="cuenta.html">Perfil</a></li>
+    </ul>
+
+</nav>
+<header>
+
+    <img src="logo.jpeg">
+
+    <h1>Servicios IntelliBank</h1>
+
+    <p>
+        Todo lo que necesitas en un banco digital moderno
+    </p>
+
+</header>
+
+<div class="contenedor">
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icono">🏦</div>
+
+            <h2>Cuentas Digitales</h2>
+
+            <p>
+                Crea cuentas bancarias rápidas y totalmente online.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">💸</div>
+
+            <h2>Transferencias</h2>
+
+            <p>
+                Envía dinero de forma segura desde cualquier lugar.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">💳</div>
+
+            <h2>Tarjetas Virtuales</h2>
+
+            <p>
+                Usa tarjetas digitales para compras online seguras.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">🤖</div>
+
+            <h2>Asistente AI</h2>
+
+            <p>
+                IntelliBank AI responde preguntas y ayuda a usuarios.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">🔒</div>
+
+            <h2>Seguridad Inteligente</h2>
+
+            <p>
+                Protección avanzada y monitoreo inteligente 24/7.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">📱</div>
+
+            <h2>Pagos Online</h2>
+
+            <p>
+                Paga servicios y compras directamente desde internet.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="extra">
+
+        <h2>Banco 100% Digital</h2>
+
+        <p>
+            IntelliBank combina tecnología moderna e inteligencia
+            artificial para ofrecer servicios financieros rápidos,
+            seguros y fáciles de usar.
+        </p>
+
+        <a href="crearcuenta.html" class="boton">
+            Crear Cuenta
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 IntelliBank - Servicios Digitales Inteligentes
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntelliBank AI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    color:#222;
+}
+/* NAVBAR */
+
+nav{
+    width:100%;
+    background:#001d66;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav h2{
+    color:white;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd45c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+header{
+    background:linear-gradient(135deg,#003bb3,#c9a13b);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header img{
+    width:180px;
+    background:white;
+    padding:10px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+header h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:22px;
+}
+
+.contenedor{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:60px 0;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    margin-bottom:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#003bb3;
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+.card p{
+    font-size:19px;
+    line-height:1.8;
+}
+
+.lista{
+    margin-top:20px;
+    padding-left:25px;
+}
+
+.lista li{
+    margin:12px 0;
+    font-size:18px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:25px;
+    background:#003bb3;
+    color:white;
+    padding:15px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#001d66;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="Index.html" class="logo-link">
+    <img src="logo.jpeg" class="logo">
+    <h2>IntelliBank</h2>
+</a>
+
+    <ul>
+        <li><a href="Index.html">Inicio</a></li>
+
+        <li><a href="servicios.html">Servicios</a></li>
+
+        <li><a href="infoia.html">AI</a></li>
+
+        <li><a href="prestamos.html">Préstamos</a></li>
+
+        <li><a href="contacto.html">Contacto</a></li>
+
+        <li><a href="cuenta.html">Perfil</a></li>
+    </ul>
+
+</nav>
+<header>
+
+    <img src="logo.jpeg">
+
+    <h1>IntelliBank AI</h1>
+
+    <p>
+        La inteligencia artificial oficial de IntelliBank
+    </p>
+
+</header>
+
+<div class="contenedor">
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+
+        <h2>¿Qué es IntelliBank AI?</h2>
+
+        <p>
+            IntelliBank AI es el sistema inteligente del banco digital IntelliBank.
+            Fue creado para ayudar a los usuarios con información financiera,
+            responder preguntas y ofrecer asistencia automática moderna.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+
+        <h2>¿Cómo trabaja la IA?</h2>
+
+        <p>
+            Cuando el usuario escribe una pregunta, IntelliBank AI analiza
+            las palabras y busca una respuesta adecuada.
+            El sistema puede responder automáticamente temas bancarios,
+            dinero, tecnología e internet.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4">
+
+        <h2>Funciones de IntelliBank AI</h2>
+
+        <ul class="lista">
+            <li>Asistencia financiera inteligente</li>
+            <li>Ayuda digital 24/7</li>
+            <li>Información bancaria automática</li>
+            <li>Orientación para usuarios</li>
+            <li>Respuestas rápidas e inteligentes</li>
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+        <h2>Innovación Digital</h2>
+
+        <p>
+            IntelliBank combina tecnología moderna, automatización e
+            inteligencia artificial para crear una experiencia bancaria
+            rápida, segura y futurista.
+        </p>
+
+        <a href="ia.html" class="boton">
+            Entrar a IntelliBank AI
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 IntelliBank AI - Tecnología Inteligente Financiera
+    </p>
+
+</footer>
+
+</body>
+</html>

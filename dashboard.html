@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntelliBank Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#eef3ff;
+}
+
+/* NAVBAR */
+nav{
+    background:#001d66;
+    color:white;
+    padding:12px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO LINK */
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo-link img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* BOTON SALIR PRO */
+.logout{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.logout:hover{
+    background:white;
+    color:#001d66;
+}
+
+/* CONTENEDOR */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* SALDO */
+.saldo-box{
+    background:linear-gradient(135deg,#003bb3,#c9a13b);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+}
+
+.saldo-box h1{
+    font-size:42px;
+    margin:0;
+}
+
+/* TARJETAS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* GRAFICO */
+.chart-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <!-- LOGO + TEXTO -->
+    <a href="index.html" class="logo-link">
+        <img src="logo.jpeg">
+        <h2>IntelliBank</h2>
+    </a>
+
+    <!-- BOTON SALIR -->
+    <button class="logout" onclick="volverCuenta()">
+    Salir
+</button>
+
+</nav>
+
+<div class="container">
+
+<!-- SALDO -->
+<div class="saldo-box">
+    <p>Saldo total</p>
+    <h1 id="saldo">RD$ 0</h1>
+</div>
+
+<!-- TARJETAS RAPIDAS -->
+<div class="cards">
+
+    <div class="card">💸 Enviar dinero</div>
+    <div class="card">💳 Pagar</div>
+    <div class="card">📥 Recibir</div>
+
+</div>
+
+<!-- GRAFICO -->
+<div class="chart-box">
+    <h3>Ingresos vs Gastos</h3>
+    <canvas id="chart"></canvas>
+</div>
+
+</div>
+
+<script>
+
+let user = localStorage.getItem("usuarioActivo") || "demo";
+
+/* SALDO */
+let saldo = localStorage.getItem("saldo_"+user) || 0;
+document.getElementById("saldo").innerText = "RD$ " + saldo;
+
+/* DATOS */
+let ingresos = [2000, 4000, 3000, 5000, 6000];
+let gastos = [1000, 1500, 1200, 2000, 2500];
+
+/* GRAFICO ADAPTADO AL FONDO */
+new Chart(document.getElementById("chart"), {
+    type: "line",
+    data: {
+        labels: ["Lun","Mar","Mie","Jue","Vie"],
+        datasets: [
+            {
+                label: "Ingresos",
+                data: ingresos,
+                borderColor: "#003bb3",
+                backgroundColor: "rgba(0,59,179,0.1)",
+                tension:0.3
+            },
+            {
+                label: "Gastos",
+                data: gastos,
+                borderColor: "#c0392b",
+                backgroundColor: "rgba(192,57,43,0.1)",
+                tension:0.3
+            }
+        ]
+    },
+    options:{
+        plugins:{
+            legend:{
+                labels:{
+                    color:"#001d66"
+                }
+            }
+        },
+        scales:{
+            x:{
+                ticks:{ color:"#001d66" }
+            },
+            y:{
+                ticks:{ color:"#001d66" }
+            }
+        }
+    }
+});
+
+/* LOGOUT */
+function volverCuenta(){
+    window.location.href = "cuenta.html";
+}
+</script>
+
+</body>
+</html>

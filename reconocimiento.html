@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipo IntelliBank</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#eef3ff;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    background:#001d66;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2{
+    color:white;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#003bb3,#c9a13b);
+    color:white;
+}
+
+header img{
+    width:180px;
+    background:white;
+    padding:10px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+header h1{
+    font-size:60px;
+}
+
+header p{
+    margin-top:15px;
+    font-size:22px;
+}
+
+/* EQUIPO */
+
+.contenedor{
+    width:90%;
+    max-width:1400px;
+    margin:60px auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    border-top:8px solid #003bb3;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.numero{
+    width:55px;
+    height:55px;
+    background:#003bb3;
+    color:white;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:#003bb3;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#c9a13b;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.card p{
+    font-size:18px;
+    line-height:1.7;
+    color:#444;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:70px;
+}
+
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="Index.html" class="logo-link">
+    <img src="logo.jpeg" class="logo">
+    <h2>IntelliBank</h2>
+</a>
+
+    <ul>
+
+        <li><a href="Index.html">Inicio</a></li>
+
+        <li><a href="servicios.html">Servicios</a></li>
+
+        <li><a href="prestamos.html">Préstamos</a></li>
+
+        <li><a href="contacto.html">Contacto</a></li>
+
+        <li><a href="cuenta.html">Perfil</a></li>
+    </ul>
+
+</nav>
+
+<header>
+
+    <img src="logo.jpeg">
+
+    <h1>Equipo de exposicion</h1>
+
+    <p>
+        4toC de comtabilidad PVAS
+    </p>
+
+</header>
+
+<div class="contenedor">
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="numero">1</div>
+
+            <h2>Dismarlyn</h2>
+
+            <h3>Gerente de Inteligencia Artificial</h3>
+
+            <p>
+                Responsable de IA & Finanzas Inteligentes
+                dentro del ecosistema IntelliBank.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">2</div>
+
+            <h2>Lisbeth</h2>
+
+            <h3>Gerente de Tecnología</h3>
+
+            <p>
+                Encargada del área de Producto & Desarrollo
+                y de las tecnologías digitales.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">3</div>
+
+            <h2>Angel Medina</h2>
+
+            <h3>Gerente de Cumplimiento y soporte tecnico</h3>
+
+            <p>
+                Responsable de Seguridad & Cumplimiento
+                y soporte técnico administrativo.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">4</div>
+
+            <h2>Anye</h2>
+
+            <h3>Gerente Financiero</h3>
+
+            <p>
+                Encargada de Operaciones Financieras
+                y administración económica.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">5</div>
+
+            <h2>Scarlett</h2>
+
+            <h3>Gerente de Marketing</h3>
+
+            <p>
+                Responsable de Marketing & Crecimiento
+                de IntelliBank.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">6</div>
+
+            <h2>Scarlett</h2>
+
+            <h3>Gerente de Clientes</h3>
+
+            <p>
+                Encargada de Experiencia del Cliente
+                y atención a usuarios.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">7</div>
+
+            <h2>Dayi</h2>
+
+            <h3>Gerente de Productos</h3>
+
+            <p>
+                Responsable de Productos & Servicios
+                dentro de IntelliBank.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">8</div>
+
+            <h2>Criss</h2>
+
+            <h3>Gerente de RRHH</h3>
+
+            <p>
+                Encargado de Talento & Cultura
+                y recursos humanos.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="numero">9</div>
+
+            <h2>Shelsy</h2>
+
+            <h3>Gerente de Datos</h3>
+
+            <p>
+                Responsable del área de Datos & Analítica
+                y procesamiento de información.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 IntelliBank - Equipo Oficial
+    </p>
+
+</footer>
+
+</body>
+</html>
